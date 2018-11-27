@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :voters 
+  resources :voters do
+  	resources :political_parties
+  end
+
   resources :political_parties do
   	resources :party_spokespeople
   end
