@@ -1,5 +1,6 @@
 class PoliticalParty
   include Mongoid::Document
+
   field :name
   field :description
   field :_id, type: String, default: ->{ name }

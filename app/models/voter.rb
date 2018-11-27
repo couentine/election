@@ -1,5 +1,7 @@
 class Voter
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
+
   field :name
   field :age
   field :interests
