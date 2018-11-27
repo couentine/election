@@ -1,0 +1,2 @@
+module PartySpokespersonHelper
+end

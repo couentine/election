@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @political_party.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @political_party.description %>
+</p>
+
+
+<% if @political_party.party_spokespeople.size > 0 %>
+  <h2>Spokes People</h2>
+  <% for party_spokesperson in @political_party.party_spokespeople %>
+    <h3><%= party_spokesperson.name %></h3>
+    <p><%= party_spokesperson.email %></p>
+    <p><%= party_spokesperson.phone %></p>
+
+  <% end %>
+<% end %>
+
+<h2>New Spokes Person</h2>
+<%= form_for [@political_party, PartySpokesperson.new] do |f| %>
+  <p><%= f.label :name %> <%= f.text_field :name %></p>
+   <p><%= f.label :email %> <%= f.text_field :phone %></p>
+   <p><%= f.label :phone %> <%= f.text_field :phone %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_political_party_path(@political_party) %> |
+<%= link_to 'Back', political_parties_path %>
